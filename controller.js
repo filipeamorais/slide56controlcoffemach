@@ -13,7 +13,9 @@ client.on('connect', ()=>{
 
 client.on('message', (topic, message)=>{
     if (topic=='coffeemaker/connected'){
-        if(message=='true')connected=true
+        if(message=='true'){
+        connected=true
+        console.log("Controller Connected")}
         else connected=false
     }
     else if(topic=='coffeemaker/state'){
@@ -45,6 +47,6 @@ setTimeout(()=>{
 
 process.on('exit',()=>console.log('Bye'))
 
-setTimeout(()=>process.exit(), 6000)
+//setTimeout(()=>process.exit(), 6000)
 
 
